@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #555555;
+        }
+        input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Percentage Calculator</h1>
+        <form onsubmit="calculatePercentages(event)">
+            <label for="numberInput">Enter a number:</label>
+            <input type="number" id="numberInput" placeholder="Enter a number" required>
+            <button type="submit">Calculate</button>
+        </form>
+        <div class="output" id="outputContainer">
+            <p id="result25"></p>
+            <p id="result50"></p>
+            <p id="result100"></p>
+        </div>
+    </div>
+
+    <script>
+        function calculatePercentages(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            const numberInput = document.getElementById('numberInput').value;
+            const number = parseFloat(numberInput);
+
+            if (!isNaN(number)) {
+                document.getElementById('result25').textContent = `2.5% of ${number} is ${(number * 0.025).toFixed(2)}`;
+                document.getElementById('result50').textContent = `5% of ${number} is ${(number * 0.05).toFixed(2)}`;
+                document.getElementById('result100').textContent = `10% of ${number} is ${(number * 0.1).toFixed(2)}`;
+            } else {
+                document.getElementById('outputContainer').textContent = 'Please enter a valid number.';
+            }
+        }
+    </script>
+</body>
+</html>
