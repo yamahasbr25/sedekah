@@ -87,12 +87,16 @@
             const number = parseFloat(numberInput);
 
             if (!isNaN(number)) {
-                document.getElementById('result25').textContent = (number * 0.025).toFixed(2);
-                document.getElementById('result50').textContent = (number * 0.05).toFixed(2);
-                document.getElementById('result100').textContent = (number * 0.1).toFixed(2);
+                document.getElementById('result25').textContent = formatNumber(number * 0.025);
+                document.getElementById('result50').textContent = formatNumber(number * 0.05);
+                document.getElementById('result100').textContent = formatNumber(number * 0.1);
             } else {
                 document.getElementById('outputContainer').textContent = 'Please enter a valid number.';
             }
+        }
+
+        function formatNumber(num) {
+            return num.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         }
     </script>
 </body>
