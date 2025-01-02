@@ -1,0 +1,2 @@
+# sedekah
+Perhitungan sedekah
