@@ -87,9 +87,9 @@
             const number = parseFloat(numberInput);
 
             if (!isNaN(number)) {
-                document.getElementById('result25').textContent = `2.5% of ${number} is ${(number * 0.025).toFixed(2)}`;
-                document.getElementById('result50').textContent = `5% of ${number} is ${(number * 0.05).toFixed(2)}`;
-                document.getElementById('result100').textContent = `10% of ${number} is ${(number * 0.1).toFixed(2)}`;
+                document.getElementById('result25').textContent = (number * 0.025).toFixed(2);
+                document.getElementById('result50').textContent = (number * 0.05).toFixed(2);
+                document.getElementById('result100').textContent = (number * 0.1).toFixed(2);
             } else {
                 document.getElementById('outputContainer').textContent = 'Please enter a valid number.';
             }
