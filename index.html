@@ -75,9 +75,9 @@
         <div class="output" id="outputContainer">
             <p id="result25"></p>
             <p id="result50"></p>
-            <p id="result100"></p>
             <p id="result70"></p>
             <p id="result90"></p>
+            <p id="result100"></p>            
         </div>
     </div>
 
@@ -91,9 +91,9 @@
             if (!isNaN(number)) {
                 document.getElementById('result25').textContent = `2,5% = ${formatNumber(Math.ceil(number * 0.025))}`;
                 document.getElementById('result50').textContent = `5% = ${formatNumber(Math.ceil(number * 0.05))}`;
-                document.getElementById('result100').textContent = `10% = ${formatNumber(Math.ceil(number * 0.1))}`;
                 document.getElementById('result70').textContent = `7% = ${formatNumber(Math.ceil(number * 0.07))}`;
                 document.getElementById('result90').textContent = `9% = ${formatNumber(Math.ceil(number * 0.09))}`;
+                document.getElementById('result100').textContent = `10% = ${formatNumber(Math.ceil(number * 0.1))}`;                
             } else {
                 document.getElementById('outputContainer').textContent = 'Please enter a valid number.';
             }
